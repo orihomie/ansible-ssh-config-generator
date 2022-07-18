@@ -1,0 +1,12 @@
+---
+   - name: Generate ssh client configuration from ansible inventory
+     hosts: localhost
+     connection: local
+     gather_facts: no
+     vars:
+       title: "EasyConfig by Ansible"
+       ssh_config_path: ssh_config.txt
+     tasks:
+       - name: ensure config for each host of inventory exist
+         template: src="ssh_config.j2" dest="{{ ssh_config_path }}"
+         when: ssh_config_path != ""
