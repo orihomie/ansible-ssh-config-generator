@@ -1,7 +1,7 @@
 ---
    - name: Generate ssh client configuration from ansible inventory
      hosts: localhost
-     connection: docker
+     connection: local
      gather_facts: no
      vars:
        title: "EasyConfig by Ansible"
