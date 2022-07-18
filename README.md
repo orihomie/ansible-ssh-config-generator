@@ -10,6 +10,12 @@ Generate ssh-config from your ansible hosts.
 
 Make sure your dynamic inventory files (*.py) have execution mode grants.
 
+### Docker
+
+To run generator for docker, first change `connection` value in `ssh-config.yml` at line 4 to `docker`.
+Then run:
+> ansible-playbook -i ./docker/docker.py ssh-config.yml
+
 ### AWS
 
 You should be logged in through `aws` cli.
